@@ -1,0 +1,22 @@
+{
+    "name": "myskeleton",
+    "description": "Your project description",
+    "keywords": ["Your keyword", "Another keyword"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "your@email.com",
+            "role": "Creator / Main Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "filp/whoops": ">=1.1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "My\\": "src/"
+        }
+    }
+}
