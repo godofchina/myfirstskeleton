@@ -25,6 +25,12 @@ $whoops = new \Whoops\Run;
 $request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
 $response = new \Http\HttpResponse;
 
+//依赖注入
+$injector = include('Dependencies.php');
+
+$request = $injector->make('Http\HttpRequest');
+$response = $injector->make('Http\HttpResponse');
+
 //访问路由类
 $routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
     $routes = include('Routes.php');
@@ -51,10 +57,9 @@ switch ($routeInfo[0]) {
 	    $method = $routeInfo[1][1];
 	    $vars = $routeInfo[2];
 
-        $class = new $className($response);
+        $class = $injector->make($className);
         $class->$method($vars);
     	break;
+
 }
-
-
 exit;
