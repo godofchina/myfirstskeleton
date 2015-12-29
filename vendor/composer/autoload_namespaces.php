@@ -11,4 +11,5 @@ return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'Mustache' => array($vendorDir . '/mustache/mustache/src'),
+    'medoo' => array($vendorDir . '/database/Medoo-master')
 );
