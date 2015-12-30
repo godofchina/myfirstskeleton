@@ -48,6 +48,7 @@ $injector->alias('My\Template\FrontendRenderer', 'My\Template\FrontendTwigRender
 $injector->alias('My\Menu\MenuReader', 'My\Menu\ArrayMenuReader');
 $injector->share('My\Menu\ArrayMenuReader');
 
-//注入database类
-// echo '<pre>';var_dump($injector);exit;
+$injector->alias('My\User\user','My\User\adminUser');
+$injector->share('My\User\adminUser');
+
 return $injector;

@@ -6,6 +6,11 @@ require __DIR__ . '/../vendor/autoload.php';
 
 error_reporting(E_ALL);
 
+//定义config文件目录
+$app_dir = dirname(__FILE__);
+define( 'CONFIG', $app_dir );
+define( 'DBCONFIG', $app_dir . '/Config/config_db.php' );
+
 $enviroment = 'development';
 
 $whoops = new \Whoops\Run;
