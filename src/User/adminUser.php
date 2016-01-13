@@ -1,22 +1,23 @@
 <?php
 namespace My\User;
 
-class adminUser implements user{
-	private $name;
-	private $id;
+use My\db\DB;
 
+class adminUser implements user{
 	public function init_user( array $data )
 	{
-		$db_config = include(DBCONFIG);
-		$medoo = new \medoo($db_config);
-		$res = $medoo -> insert('blog_user', $data);
+		$medoo = DB::instance();
+
+		$res = $medoo -> insert( 'blog_user', $data );
 		
 		return $res;
 	}
 
-	public function get_user_info()
-	{
+	public function get_user_info( $uid )
+	{	
+		$medoo = DB::instance();
 
+		$info = $medoo -> select( 'blog_user', '*' , array('id[=]'=>$uid) );
 		return $info;
 	}
 }

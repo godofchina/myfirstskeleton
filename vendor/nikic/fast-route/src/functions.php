@@ -22,7 +22,7 @@ if (!function_exists('FastRoute\simpleDispatcher')) {
             new $options['routeParser'], new $options['dataGenerator']
         );
         $routeDefinitionCallback($routeCollector);
-
+        
         return new $options['dispatcher']($routeCollector->getData());
     }
 

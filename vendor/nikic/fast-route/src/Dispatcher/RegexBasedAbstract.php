@@ -34,7 +34,7 @@ abstract class RegexBasedAbstract implements Dispatcher {
 
         // Find allowed methods for this URI by matching against all other HTTP methods as well
         $allowedMethods = [];
-
+       
         foreach ($this->staticRouteMap as $method => $uriMap) {
             if ($method !== $httpMethod && isset($uriMap[$uri])) {
                 $allowedMethods[] = $method;

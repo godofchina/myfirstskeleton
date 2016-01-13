@@ -6,5 +6,5 @@ interface user{
 	public function init_user(array $data);
 
 	//获取用户信息
-	public function get_user_info();
+	public function get_user_info( $uid );
 }
